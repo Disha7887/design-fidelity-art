@@ -1,6 +1,6 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import PricingSection from '../components/PricingSection';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
+import PricingSection from '../src/components/PricingSection';
 
 export default function PricingPage() {
   return (

@@ -1,25 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import ToolsSection from './components/ToolsSection';
-import AnimatedStatsSection from './components/AnimatedStatsSection';
-import GallerySection from './components/GallerySection';
-import TestimonialsSection from './components/TestimonialsSection';
-import Footer from './components/Footer';
-import PricingPage from './pages/Pricing';
-import AuthPage from './pages/Auth';
-import ContactPage from './pages/Contact';
-import AboutPage from './pages/About';
-import SupportPage from './pages/Support';
-import DashboardPage from './pages/Dashboard';
-import ToolPage from './pages/ToolPage';
-import ToolsListPage from './pages/ToolsList';
-import PrivacyPage from './pages/Privacy';
-import TermsPage from './pages/Terms';
-import NotFoundPage from './pages/NotFound';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import Header from '../src/components/Header';
+import HeroSection from '../src/components/HeroSection';
+import ToolsSection from '../src/components/ToolsSection';
+import AnimatedStatsSection from '../src/components/AnimatedStatsSection';
+import GallerySection from '../src/components/GallerySection';
+import TestimonialsSection from '../src/components/TestimonialsSection';
+import Footer from '../src/components/Footer';
 
-function HomePage() {
+export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -94,26 +82,3 @@ function HomePage() {
     </div>
   );
 }
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/auth" element={<AuthPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/support" element={<SupportPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/tools" element={<ToolsListPage />} />
-        <Route path="/tools/:slug" element={<ToolPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/terms" element={<TermsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;

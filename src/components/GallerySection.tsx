@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function GallerySection() {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -124,7 +124,7 @@ export default function GallerySection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/tools" className="px-8 py-4 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600 transition-all duration-200 ease-in-out transform hover:scale-105 shadow-lg whitespace-nowrap font-inter cursor-pointer">
+              <Link href="/tools" className="px-8 py-4 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600 transition-all duration-200 ease-in-out transform hover:scale-105 shadow-lg whitespace-nowrap font-inter cursor-pointer">
                 <i className="ri-arrow-right-line mr-2"></i>
                 Try Tools Now
               </Link>
