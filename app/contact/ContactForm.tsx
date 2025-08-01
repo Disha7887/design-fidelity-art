@@ -70,7 +70,7 @@ export default function ContactForm() {
     try {
       const formDataToSend = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        if (key === 'attachments' && value) {
+        if (key === 'attachments' && value instanceof FileList) {
           Array.from(value).forEach(file => {
             formDataToSend.append('attachments', file);
           });

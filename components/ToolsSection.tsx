@@ -207,12 +207,16 @@ export default function ToolsSection() {
           {popularTools.map((tool, index) => (
             <ToolCard
               key={index}
-              icon={tool.icon}
-              title={tool.title}
-              description={tool.description}
-              href={tool.href}
-              iconBgColor={tool.iconBgColor}
-              iconColor={tool.iconColor}
+              tool={{
+                name: tool.title,
+                description: tool.description,
+                icon: tool.icon,
+                slug: tool.href.replace('/tools/', ''),
+                category: 'conversion',
+                color: tool.iconColor.includes('blue') ? 'blue' : 
+                       tool.iconColor.includes('green') ? 'green' :
+                       tool.iconColor.includes('yellow') ? 'yellow' : 'red'
+              }}
             />
           ))}
         </div>
@@ -227,12 +231,18 @@ export default function ToolsSection() {
           {allTools.map((tool, index) => (
             <ToolCard
               key={index}
-              icon={tool.icon}
-              title={tool.title}
-              description={tool.description}
-              href={tool.href}
-              iconBgColor={tool.iconBgColor}
-              iconColor={tool.iconColor}
+              tool={{
+                name: tool.title,
+                description: tool.description,
+                icon: tool.icon,
+                slug: tool.href.replace('/tools/', ''),
+                category: 'conversion',
+                color: tool.iconColor.includes('blue') ? 'blue' : 
+                       tool.iconColor.includes('green') ? 'green' :
+                       tool.iconColor.includes('red') ? 'red' :
+                       tool.iconColor.includes('purple') ? 'purple' :
+                       tool.iconColor.includes('orange') ? 'orange' : 'gray'
+              }}
             />
           ))}
         </div>
