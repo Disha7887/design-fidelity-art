@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import Header from '../src/components/Header';
-import HeroSection from '../src/components/HeroSection';
-import ToolsSection from '../src/components/ToolsSection';
-import AnimatedStatsSection from '../src/components/AnimatedStatsSection';
-import GallerySection from '../src/components/GallerySection';
-import TestimonialsSection from '../src/components/TestimonialsSection';
-import Footer from '../src/components/Footer';
+import Header from '../components/Header';
+import HeroSection from '../components/HeroSection';
+import ToolsSection from '../components/ToolsSection';
+import AnimatedStatsSection from '../components/AnimatedStatsSection';
+import GallerySection from '../components/GallerySection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);

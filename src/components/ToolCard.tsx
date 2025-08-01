@@ -1,7 +1,7 @@
 
-'use client';
 
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 
 interface Tool {
   name: string;
@@ -112,7 +112,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
   };
 
   return (
-    <Link href={`/tools/${tool.slug}`} className="block h-full group w-full">
+    <Link to={`/tools/${tool.slug}`} className="block h-full group w-full">
       <div className={`bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out p-6 sm:p-8 group-hover:scale-105 h-full cursor-pointer border border-gray-100 hover:ring-4 hover:ring-opacity-50 ${getHoverRingStyle(tool.color)} w-full`}>
         <div className="text-center h-full flex flex-col w-full">
           <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 ${getBackgroundStyle(tool.color)} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ease-in-out border animate-pulse flex-shrink-0`}>
