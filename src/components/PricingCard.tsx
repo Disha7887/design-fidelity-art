@@ -1,4 +1,4 @@
-'use client';
+
 
 interface PricingCardProps {
   name: string;

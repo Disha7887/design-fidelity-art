@@ -1,13 +1,13 @@
 
-'use client';
 
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useMemo } from 'react';
 
 export default function AnimatedStatsSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [animatedStats, setAnimatedStats] = useState([0, 0, 0, 0]);
 
-  const stats = [
+  const stats = useMemo(() => [
     {
       icon: 'ri-user-line',
       value: 10000000,
@@ -36,7 +36,7 @@ export default function AnimatedStatsSection() {
       suffix: 'sec',
       color: 'text-purple-500'
     }
-  ];
+  ], []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,7 +77,7 @@ export default function AnimatedStatsSection() {
         }, 20);
       });
     }
-  }, [isVisible]);
+  }, [isVisible, stats]);
 
   const formatNumber = (num: number, index: number) => {
     if (index === 0) return Math.floor(num / 1000000); // Users in millions

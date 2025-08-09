@@ -1,8 +1,6 @@
 
-'use client';
-
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 export default function GallerySection() {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -36,7 +34,7 @@ export default function GallerySection() {
       setActiveFeature((prev) => (prev + 1) % features.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [features.length]);
 
   return (
     <div className="relative bg-gray-900 py-24 overflow-hidden">
