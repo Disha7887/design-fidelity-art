@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 
 interface FormData {
@@ -60,9 +58,9 @@ export default function ContactForm() {
         message: '',
         attachments: null
       });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
+          } catch {
+        setSubmitStatus('error');
+      } finally {
       setIsSubmitting(false);
     }
   };

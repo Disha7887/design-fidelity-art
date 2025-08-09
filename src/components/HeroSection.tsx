@@ -1,6 +1,4 @@
 
-'use client';
-
 import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
@@ -25,7 +23,7 @@ export default function HeroSection() {
       }, 300);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -42,11 +40,11 @@ export default function HeroSection() {
     setIsDragging(false);
     const files = e.dataTransfer.files;
     if (files.length > 0) {
-      handleFileUpload(files[0]);
+      handleFileUpload();
     }
   };
 
-  const handleFileUpload = (file: File) => {
+  const handleFileUpload = () => {
     setIsUploading(true);
     setUploadProgress(0);
 
@@ -65,7 +63,7 @@ export default function HeroSection() {
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      handleFileUpload(file);
+      handleFileUpload();
     }
   };
 
